@@ -9,6 +9,9 @@ public class Avaliador {
 	private double menorDeTodos = Double.POSITIVE_INFINITY;
 	private List<Lance> maiores = new ArrayList<>();
 	public void avalia (Leilao leilao) {
+		if (leilao.getLances().size()==0) {
+			throw new RuntimeException("Não é possivel avaliar um leilão sem lances");
+		}
 		for (Lance lance : leilao.getLances()) {
 			if (lance.getValor()>maiorDeTodos) {
 				maiorDeTodos =lance.getValor();
