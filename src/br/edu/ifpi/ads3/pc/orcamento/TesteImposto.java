@@ -5,5 +5,7 @@ public class TesteImposto {
 		Orcamento orcamento = new Orcamento(10000);
 		CalculadorDeImpostos c = new CalculadorDeImpostos();
 		c.realizaCalculo(orcamento, new MariaAline());
+		c.realizaCalculo(orcamento, new ISS());
+		c.realizaCalculo(orcamento, new ICMS());
 	}
 }
