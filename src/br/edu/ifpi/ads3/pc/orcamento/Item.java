@@ -7,5 +7,7 @@ public class Item {
 		this.nome = nome;
 		this.valor = valor;
 	}
-	
+	public double getValor() {
+		return valor;
+	}
 }
