@@ -7,5 +7,6 @@ public class TesteImposto {
 		c.realizaCalculo(orcamento, new MariaAline());
 		c.realizaCalculo(orcamento, new ISS());
 		c.realizaCalculo(orcamento, new ICMS());
+		c.realizaCalculo(orcamento, new MariaAline(new ISS(new ICMS(new ICMS()))));
 	}
 }
