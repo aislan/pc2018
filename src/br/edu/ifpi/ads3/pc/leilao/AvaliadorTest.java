@@ -1,5 +1,7 @@
 package br.edu.ifpi.ads3.pc.leilao;
 
+import java.util.ArrayList;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -35,6 +37,10 @@ public class AvaliadorTest {
 		double menorDeTodosEsperado = 1500.00;
 		Assert.assertEquals(maiorDeTodosEsperado, leiloeiro.getMaiorDeTodos(),0.00001);
 		Assert.assertEquals(menorDeTodosEsperado, leiloeiro.getMenorDeTodos(),0.00001);
+		ArrayList<Double> respostas = new ArrayList<>();
+		respostas.add(1.3);
+		respostas.add(2.2);
+		Assert.assertTrue(respostas.contains(1.3));
 	}
 	@Test
 	public void deveEntenderLancesDeOrdemDecrescente() {
