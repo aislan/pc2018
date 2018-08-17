@@ -9,8 +9,7 @@ import java.sql.Statement;
 
 public class TesteConexao {
 	public static void main(String[] args) throws SQLException {
-		Connection c = DriverManager.getConnection("jdbc:hsqldb:hsql://"
-				+ "localhost/loja-virtual", "SA", "");
+		Connection c = Database.getConnection();
 		Statement stmt = c.createStatement();
 		stmt.execute("select * from produto");
 		ResultSet resultSet = stmt.getResultSet();
