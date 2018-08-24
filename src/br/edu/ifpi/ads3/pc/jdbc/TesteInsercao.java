@@ -9,7 +9,8 @@ import java.sql.Statement;
 
 public class TesteInsercao {
 	public static void main(String[] args) throws SQLException {
-		try (Connection c = Database.getConnection()){
+		Database database = new Database();
+		try (Connection c = database.getConnection()){
 			c.setAutoCommit(false);
 			String sql = "insert into Produto (nome, descricao) values (?, ?)";
 			
