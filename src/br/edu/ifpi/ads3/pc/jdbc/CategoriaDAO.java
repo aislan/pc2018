@@ -12,8 +12,8 @@ public class CategoriaDAO {
 	public CategoriaDAO(Connection connection) {
 		this.connection = connection;
 	}
-	public List<Produto> lista() throws SQLException {
-		ArrayList<Produto> categorias = new ArrayList<>();
+	public List<Categoria> lista() throws SQLException {
+		ArrayList<Categoria> categorias = new ArrayList<>();
 		try (Statement stmt = connection.createStatement()){
 			stmt.execute("select * from categoria");
 			try (ResultSet rs = stmt.getResultSet()){
@@ -22,7 +22,7 @@ public class CategoriaDAO {
 					String nome = rs.getString("nome");
 					Categoria c = new Categoria(nome);
 					c.setId(id);
-					categorias.add(p);
+					categorias.add(c);
 				}
 			}
 		}
