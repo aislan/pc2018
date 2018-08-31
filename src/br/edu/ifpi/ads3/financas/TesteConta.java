@@ -5,21 +5,28 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import br.edu.ifpi.ads3.financas.modelo.Conta;
+import br.edu.ifpi.ads3.financas.util.JPAUtil;
 
 public class TesteConta {
 	public static void main(String[] args) {
 		Conta conta = new Conta();
 		conta.setAgencia("123");
 		conta.setBanco("Banco do Brasil");
-		conta.setNumero("9087");
-		conta.setTitular("Maria Allyne");
+		conta.setNumero("9088");
+		conta.setTitular("Ulisses");
 		
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("financas");
-		EntityManager em = emf.createEntityManager();
+		EntityManager em = new JPAUtil().getEntityManager();
 		em.getTransaction().begin();
 		em.persist(conta);
 		em.getTransaction().commit();
 		em.close();
-		emf.close();
+		
+		EntityManager em2 = new JPAUtil().getEntityManager();
+		em2.getTransaction().begin();
+		conta.setTitular("batman");
+		em2.merge(conta);
+		em2.getTransaction().commit();
+		em2.close();
+	
 	}
 }

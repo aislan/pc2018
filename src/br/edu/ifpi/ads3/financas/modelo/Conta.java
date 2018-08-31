@@ -11,7 +11,7 @@ public class Conta {
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	private String titular;
-	private String Banco;
+	private String banco;
 	private String agencia;
 	private String numero;
 	public Integer getId() {
@@ -27,10 +27,10 @@ public class Conta {
 		this.titular = titular;
 	}
 	public String getBanco() {
-		return Banco;
+		return banco;
 	}
 	public void setBanco(String banco) {
-		Banco = banco;
+		this.banco = banco;
 	}
 	public String getAgencia() {
 		return agencia;

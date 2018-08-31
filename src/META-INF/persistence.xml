@@ -12,6 +12,9 @@
 
         <!-- Aqui são listadas todas as entidades -->
         <class>br.edu.ifpi.ads3.financas.modelo.Conta</class>
+        <class>br.edu.ifpi.ads3.financas.modelo.Movimentacao</class>
+        <class>br.edu.ifpi.ads3.financas.modelo.Cliente</class>
+        <class>br.edu.ifpi.ads3.financas.modelo.Categoria</class>
 
         <properties>    
             <!-- Propriedades JDBC -->
